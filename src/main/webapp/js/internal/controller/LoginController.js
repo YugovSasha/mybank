@@ -9,7 +9,7 @@
             .state('login', {
                 parent: 'global',
                 url: '/login',
-                templateUrl: 'login/layout',
+                templateUrl: 'login',
                 controller: 'LoginController',
                 controllerAs: 'login'
             })

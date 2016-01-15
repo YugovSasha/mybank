@@ -2,7 +2,7 @@
     'use strict';
 
     angular
-        .module('mybank')
+        .module('m')
         .config(routeDefaultPathConfig)
         .run(routeErrorConfig);
 
@@ -15,13 +15,9 @@
 
     /** @ngInject */
     function routeErrorConfig($rootScope, $state) {
-        $rootScope.$on('$stateChangeError', function (event, toState, toParams, fromState, fromParams, error) {
+        $rootScope.$on('$stateChangeError', function (event) {
             event.preventDefault();
-            if (error.status === 403) {
-                $state.go('login');
-            } else {
-                $state.go('home');
-            }
+            $state.go('home');
         });
     }
 
