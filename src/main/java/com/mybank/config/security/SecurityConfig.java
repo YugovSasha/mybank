@@ -30,6 +30,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         http.requiresChannel().anyRequest().requiresSecure()
                 .and()
                 .authorizeRequests()
+                .antMatchers("/public/**", "/login**").permitAll()
                 .anyRequest().fullyAuthenticated()
                 .and().csrf().disable();
     }
