@@ -1,1 +1,1 @@
-admin!!!
+<div ui-view="filter"></div>

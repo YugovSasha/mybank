@@ -16,7 +16,7 @@ public class AccountController {
 
     @RequestMapping(value = "/current")
     @ResponseBody
-    private UserProfile viewCurrentUserProfile() {
+    public UserProfile viewCurrentUserProfile() {
         return userProfileContext.optional().orElse(null);
     }
 }

@@ -30,6 +30,8 @@
 <script src="<c:url value="/js/internal/controller/HomeController.js"/>"></script>
 <script src="<c:url value="/js/internal/controller/AdminController.js"/>"></script>
 <script src="<c:url value="/js/internal/controller/LoginController.js"/>"></script>
+<script src="<c:url value="/js/internal/controller/AdminUsersController.js"/>"></script>
+<script src="<c:url value="/js/internal/controller/AdminCreditsController.js"/>"></script>
 
 <div class="container-fluid">
   <div ui-view class="main-view"></div>

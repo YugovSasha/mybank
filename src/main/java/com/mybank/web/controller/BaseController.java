@@ -8,17 +8,17 @@ import org.springframework.web.bind.annotation.RequestMethod;
 public class BaseController {
 
     @RequestMapping(value = "/" , method = RequestMethod.GET)
-    private String homeLayout() {
+    public String indexLayout() {
         return "index";
     }
 
     @RequestMapping(value = "/global/layout" , method = RequestMethod.GET)
-    private String globalLayout() {
+    public String globalLayout() {
         return "global/layout";
     }
 
     @RequestMapping(value = "/login", method = RequestMethod.GET)
-    private String login() {
+    public String login() {
         return "login/layout";
     }
 }

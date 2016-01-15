@@ -19,9 +19,13 @@
         var vm = this;
 
         vm.submit = function(loginForm) {
-            $http.post('login', {}, {params: {'email': loginForm.email.$viewValue, 'password': loginForm.password.$viewValue}}).then(function() {
-                alert('adfasdfasdf');
-                $state.go('admin');
+            $http.post('login', {}, {
+                params: {
+                    'email': loginForm.email.$viewValue,
+                    'password': loginForm.password.$viewValue
+                }
+            }).then(function() {
+                $state.go('admin.users')
             });
         }
     }

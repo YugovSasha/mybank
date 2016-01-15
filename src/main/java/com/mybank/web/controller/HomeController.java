@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 public class HomeController {
 
     @RequestMapping(value = "/layout", method = RequestMethod.GET)
-    private String layout() {
+    public String layout() {
         return "home/layout";
     }
 }
