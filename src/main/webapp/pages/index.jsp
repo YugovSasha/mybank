@@ -26,12 +26,12 @@
 
 <script src="<c:url value="/js/internal/app.js"/>"></script>
 <script src="<c:url value="/js/internal/config/route.config.js"/>"></script>
-<script src="<c:url value="/js/internal/controller/GlobalController.js"/>"></script>
-<script src="<c:url value="/js/internal/controller/HomeController.js"/>"></script>
-<script src="<c:url value="/js/internal/controller/AdminController.js"/>"></script>
-<script src="<c:url value="/js/internal/controller/LoginController.js"/>"></script>
-<script src="<c:url value="/js/internal/controller/AdminUsersController.js"/>"></script>
-<script src="<c:url value="/js/internal/controller/AdminCreditsController.js"/>"></script>
+<script src="<c:url value="/js/internal/controller/global.controller.js"/>"></script>
+<script src="<c:url value="/js/internal/controller/home.controller.js"/>"></script>
+<script src="<c:url value="/js/internal/controller/admin.route.js"/>"></script>
+<script src="<c:url value="/js/internal/controller/login.controller.js"/>"></script>
+<script src="<c:url value="/js/internal/controller/admin-users.controller.js"/>"></script>
+<script src="<c:url value="/js/internal/controller/admin-credits.controller.js"/>"></script>
 
 <div class="container-fluid">
   <div ui-view class="main-view"></div>

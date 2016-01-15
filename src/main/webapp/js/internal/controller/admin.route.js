@@ -1,8 +1,7 @@
 (function () {
 
     angular.module('mybank')
-        .config(adminRouteConfig)
-        .controller('AdminController', AdminController);
+        .config(adminRouteConfig);
 
     function adminRouteConfig($stateProvider) {
         $stateProvider
@@ -36,10 +35,6 @@
                     }
                 }
             })
-    }
-
-    function AdminController() {
-        var vm = this;
     }
 })();
 
