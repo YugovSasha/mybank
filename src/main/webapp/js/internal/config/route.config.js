@@ -2,7 +2,7 @@
     'use strict';
 
     angular
-        .module('gifteka')
+        .module('mybank')
         .config(routeDefaultPathConfig)
         .run(routeErrorConfig);
 
@@ -17,7 +17,7 @@
     function routeErrorConfig($rootScope, $state) {
         $rootScope.$on('$stateChangeError', function (event, toState, toParams, fromState, fromParams, error) {
             event.preventDefault();
-            if (error.status === 401) {
+            if (error.status === 403) {
                 $state.go('login');
             } else {
                 $state.go('home');

@@ -4,11 +4,9 @@ import com.mybank.data.model.user.User;
 import com.mybank.data.repository.UserRepository;
 import com.mybank.service.user.UserAuthenticationPrincipleContext;
 import com.mybank.service.user.UserContext;
-import com.mybank.service.user.exception.NoUserLoggedInException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import javax.transaction.SystemException;
 import java.util.Optional;
 
 @Service

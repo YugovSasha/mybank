@@ -1,7 +1,6 @@
 package com.mybank.service.user;
 
 import com.mybank.data.model.user.User;
-import com.mybank.service.user.exception.NoUserLoggedInException;
 
 import java.util.Optional;
 
