@@ -1,4 +1,3 @@
-
 <div class="login-content col-md-offset-3 col-md-6 well well-lg text-center bg-danger"
      style="background-color: #d9534f !important; background-image: none; color: #fff" ng-if="login.showError">
   Invalid email or password

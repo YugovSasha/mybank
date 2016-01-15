@@ -9,7 +9,7 @@
             .state('admin', {
                 parent: 'global',
                 url: '/admin',
-                templateUrl: 'admin/layout',
+                templateUrl: '/admin/layout',
                 controller: 'AdminController',
                 controllerAs: 'admin'
         })

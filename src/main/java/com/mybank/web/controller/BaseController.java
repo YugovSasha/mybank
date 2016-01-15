@@ -12,6 +12,11 @@ public class BaseController {
         return "index";
     }
 
+    @RequestMapping(value = "/global/layout" , method = RequestMethod.GET)
+    private String globalLayout() {
+        return "global/layout";
+    }
+
     @RequestMapping(value = "/login", method = RequestMethod.GET)
     private String login() {
         return "login/layout";

@@ -8,16 +8,14 @@
         $stateProvider
             .state('global', {
                 abstract: true,
-                templateUrl: '/',
+                templateUrl: '/global/layout',
                 controller: 'GlobalController',
                 controllerAs: 'global'
             })
     }
 
-    function GlobalController(currentUser) {
+    function GlobalController() {
         var vm = this;
-
-        console.log(currentUser);
     }
 })();
 
