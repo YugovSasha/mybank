@@ -1,13 +1,9 @@
 package com.mybank.data.model.user;
 
-import com.fasterxml.jackson.annotation.JsonBackReference;
-import com.mybank.data.model.bank.Score;
 import com.mybank.data.model.common.AbstractExpiringEntity;
 import lombok.*;
 
 import javax.persistence.*;
-import java.util.ArrayList;
-import java.util.List;
 
 /**
  * @author admin.
@@ -16,30 +12,20 @@ import java.util.List;
 @Getter
 @Setter
 @NoArgsConstructor
-@RequiredArgsConstructor
-@AllArgsConstructor
+@Table(name = "user_profile")
 public class UserProfile extends AbstractExpiringEntity {
-    @NonNull
+
+    @Column(name = "first_name")
     private String firstName;
-    @NonNull
-    private String lastName;
-    @NonNull
+
+    @Column(name = "last_name")
+    private String LastName;
+
+    @Column(name = "patronymic")
     private String patronymic;
-    @NonNull
-    private String personalNumber;
-    @NonNull
-    private String passportNumber;
 
-    @OneToOne(cascade = CascadeType.ALL, targetEntity = Score.class)
-    @NonNull
-    private Score score;
-
-    @NonNull
-    @OneToOne(fetch = FetchType.EAGER)
-    @PrimaryKeyJoinColumn
-    @JsonBackReference
+    @OneToOne(fetch = FetchType.EAGER, optional = false,
+            cascade = {CascadeType.PERSIST, CascadeType.REMOVE, CascadeType.MERGE}, targetEntity = User.class)
+    @JoinColumn(name = "user_id", nullable = false)
     private User user;
-
-    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-    private List<UserCredit> userCredits = new ArrayList<>();
 }

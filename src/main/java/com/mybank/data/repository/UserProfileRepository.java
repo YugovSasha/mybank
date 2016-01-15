@@ -1,13 +1,13 @@
 package com.mybank.data.repository;
 
+import com.mybank.data.config.repository.EntityRepository;
+import com.mybank.data.model.user.User;
 import com.mybank.data.model.user.UserProfile;
-import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.stereotype.Repository;
 
 /**
- * Created by admin on 11/6/2015.
+ * Created by a2.yugov on 15.01.2016.
  */
-@Repository
-public interface UserProfileRepository extends JpaRepository<UserProfile, Long> {
-    UserProfile findByPersonalNumber(String personalNumber);
+public interface UserProfileRepository extends EntityRepository<UserProfile> {
+
+    UserProfile findByUser(User user);
 }

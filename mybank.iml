@@ -6,6 +6,14 @@
         <fileset id="fileset1" name="XML Application Context" removed="false">
           <file>file://$MODULE_DIR$/src/main/resources/spring-config.xml</file>
         </fileset>
+        <fileset id="fileset" name="Spring Application Context" removed="false">
+          <file>file://$MODULE_DIR$/src/main/java/com/mybank/config/Application.java</file>
+          <file>file://$MODULE_DIR$/src/main/java/com/mybank/data/config/DatabaseConfig.java</file>
+          <file>file://$MODULE_DIR$/src/main/java/com/mybank/config/SchedulingConfig.java</file>
+          <file>file://$MODULE_DIR$/src/main/java/com/mybank/config/security/SecurityConfig.java</file>
+          <file>file://$MODULE_DIR$/src/main/java/com/mybank/service/ServiceConfig.java</file>
+          <file>file://$MODULE_DIR$/src/main/java/com/mybank/web/config/WebConfig.java</file>
+        </fileset>
       </configuration>
     </facet>
     <facet type="web" name="Web">

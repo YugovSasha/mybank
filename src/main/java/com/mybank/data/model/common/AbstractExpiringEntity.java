@@ -16,6 +16,6 @@ import javax.persistence.MappedSuperclass;
 @NoArgsConstructor
 public abstract class AbstractExpiringEntity extends AbstractEntity {
 
-    @Column
-    private boolean expired = false;
+    @Column(nullable = false)
+    private boolean expired;
 }
