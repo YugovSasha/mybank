@@ -14,17 +14,25 @@
             }).state('admin.users', {
                 url: '/users',
                 controller: 'AdminUsersController',
+                controllerAs: 'adminUsers',
                 views: {
                     filter: {
-                        template: '<p>alala</p>'
+                        templateUrl: '/admin/users/filter'
+                    },
+                    table: {
+                        templateUrl: '/admin/users/table'
                     }
                 }
             }).state('admin.credits', {
                 url: '/credits',
-                controller: 'AdminUsersController',
+                controller: 'AdminCreditsController',
+                controllerAs: 'adminCredits',
                 views: {
                     filter: {
-                        template: '<p>ololo</p>'
+                        templateUrl: '/admin/credits/filter'
+                    },
+                    table: {
+                        templateUrl: '/admin/credits/table'
                     }
                 }
             })

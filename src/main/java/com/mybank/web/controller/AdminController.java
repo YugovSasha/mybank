@@ -1,11 +1,13 @@
 package com.mybank.web.controller;
 
+import com.google.common.base.Joiner;
 import org.springframework.security.access.annotation.Secured;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-@Secured("RULE_ADMIN")
+@Secured("ROLE_ADMIN")
 @Controller
 @RequestMapping("admin")
 public class AdminController {
@@ -15,13 +17,13 @@ public class AdminController {
         return "admin/layout";
     }
 
-    @RequestMapping(value = "/users/layout", method = RequestMethod.GET)
-    public String usersLayout() {
-        return "admin/users";
+    @RequestMapping(value = "/{section}/filter", method = RequestMethod.GET)
+    public String filters(@PathVariable String section) {
+        return Joiner.on('/').join("admin", section, "filter");
     }
 
-    @RequestMapping(value = "/credits/layout", method = RequestMethod.GET)
-    public String creditsLayout() {
-        return "admin/credits";
+    @RequestMapping(value = "/{section}/table", method = RequestMethod.GET)
+    public String tables(@PathVariable String section) {
+        return Joiner.on('/').join("admin", section, "table");
     }
 }
