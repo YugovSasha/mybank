@@ -30,10 +30,12 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         http.requiresChannel().anyRequest().requiresSecure()
                 .and()
                 .authorizeRequests()
-                .antMatchers("/", "/login**").permitAll()
+                .antMatchers("/").permitAll()
                 .antMatchers("/home/**").permitAll()
+                .antMatchers("/users/current").permitAll()
                 .antMatchers("/admin/**").hasRole("ADMIN")
                 .anyRequest().fullyAuthenticated()
+                .and().formLogin().loginPage("/login").usernameParameter("email").passwordParameter("password").permitAll()
                 .and().csrf().disable();
     }
 

@@ -5,9 +5,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-/**
- * Created by a2.yugov on 15.01.2016.
- */
 @Secured("RULE_ADMIN")
 @Controller
 @RequestMapping("admin")

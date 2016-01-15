@@ -7,8 +7,8 @@
     function adminRouteConfig($stateProvider) {
         $stateProvider
             .state('home', {
-                url: '/home',
                 parent: 'global',
+                url: '/home',
                 templateUrl: 'home/layout',
                 controller: 'HomeController',
                 controllerAs: 'home'
