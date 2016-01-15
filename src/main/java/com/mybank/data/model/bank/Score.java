@@ -1,0 +1,42 @@
+package com.mybank.data.model.bank;
+
+
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.mybank.data.model.common.AbstractExpiringEntity;
+import com.mybank.data.model.user.UserProfile;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
+import javax.persistence.*;
+
+/**
+ * @author admin.
+ */
+@Entity
+@Getter
+@Setter
+@NoArgsConstructor
+public class Score extends AbstractExpiringEntity {
+
+    private String name;
+
+    private double value;
+
+    @OneToOne
+    @PrimaryKeyJoinColumn
+    @JsonBackReference
+    private UserProfile userProfile;
+
+    @ManyToOne(cascade = CascadeType.PERSIST)
+    private ScoreType scoreTypes;
+
+    @Enumerated(EnumType.STRING)
+    private Credit.CurrencyCode currency = Credit.CurrencyCode.BLR;
+
+    public Score(String name, double value) {
+        this.name = name;
+        this.value = value;
+    }
+
+}

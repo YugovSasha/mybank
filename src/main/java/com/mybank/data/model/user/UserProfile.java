@@ -1,0 +1,45 @@
+package com.mybank.data.model.user;
+
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.mybank.data.model.bank.Score;
+import com.mybank.data.model.common.AbstractExpiringEntity;
+import lombok.*;
+
+import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
+
+/**
+ * @author admin.
+ */
+@Entity
+@Getter
+@Setter
+@NoArgsConstructor
+@RequiredArgsConstructor
+@AllArgsConstructor
+public class UserProfile extends AbstractExpiringEntity {
+    @NonNull
+    private String firstName;
+    @NonNull
+    private String lastName;
+    @NonNull
+    private String patronymic;
+    @NonNull
+    private String personalNumber;
+    @NonNull
+    private String passportNumber;
+
+    @OneToOne(cascade = CascadeType.ALL, targetEntity = Score.class)
+    @NonNull
+    private Score score;
+
+    @NonNull
+    @OneToOne(fetch = FetchType.EAGER)
+    @PrimaryKeyJoinColumn
+    @JsonBackReference
+    private User user;
+
+    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    private List<UserCredit> userCredits = new ArrayList<>();
+}
