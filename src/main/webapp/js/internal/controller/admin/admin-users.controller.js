@@ -14,7 +14,7 @@
             });
     }
 
-    function AdminUsersController($http) {
+    function AdminUsersController($http, $uibModal) {
         var vm = this;
 
         vm.users = [];
@@ -35,6 +35,8 @@
             enableRowHeaderSelection: false,
             enableFullRowSelection: true,
             multiSelect: false,
+            enableHorizontalScrollbar: 0,
+            enableVerticalScrollbar: 2,
             onRegisterApi: function(gridApi) {
                 vm.gridApi = gridApi;
             }
@@ -47,6 +49,18 @@
         }
 
         initData();
+
+        vm.personSelected = function() {
+            return vm.gridApi ? vm.gridApi.selection.getSelectedRows().length : false;
+        };
+
+        vm.editSelected = function() {
+            $uibModal.open({
+
+            }).result.then(function (user) {
+                    console.log(_.last(vm.gridApi.selection.getSelectedRows()));
+                }).then(initData);
+        }
     }
 })();
 
