@@ -28,14 +28,13 @@
 <script src="<c:url value="/js/internal/config/route.config.js"/>"></script>
 <script src="<c:url value="/js/internal/controller/global.controller.js"/>"></script>
 <script src="<c:url value="/js/internal/controller/home.controller.js"/>"></script>
-<script src="<c:url value="/js/internal/controller/admin.route.js"/>"></script>
+<script src="<c:url value="/js/internal/controller/admin/admin.controller.js"/>"></script>
 <script src="<c:url value="/js/internal/controller/login.controller.js"/>"></script>
-<script src="<c:url value="/js/internal/controller/admin-users.controller.js"/>"></script>
-<script src="<c:url value="/js/internal/controller/admin-credits.controller.js"/>"></script>
+<script src="<c:url value="/js/internal/controller/admin/admin-users.controller.js"/>"></script>
+<script src="<c:url value="/js/internal/controller/admin/admin-credits.controller.js"/>"></script>
 
-<div class="container-fluid">
-  <div ui-view class="main-view"></div>
-  <div growl class="notifications"></div>
-</div>
+<div ui-view class="main-view"></div>
+<div growl class="notifications"></div>
+
 </body>
 </html>

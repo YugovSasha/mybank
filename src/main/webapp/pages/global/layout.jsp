@@ -21,5 +21,7 @@
     </div>
   </div>
 
-  <div ui-view></div>
+  <div class="container-fluid page-content">
+    <div ui-view></div>
+  </div>
 </div>

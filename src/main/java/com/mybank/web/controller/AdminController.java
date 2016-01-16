@@ -14,16 +14,16 @@ public class AdminController {
 
     @RequestMapping(value = "/layout", method = RequestMethod.GET)
     public String layout() {
-        return "admin/layout";
+        return "global/admin/layout";
     }
 
     @RequestMapping(value = "/{section}/filter", method = RequestMethod.GET)
     public String filters(@PathVariable String section) {
-        return Joiner.on('/').join("admin", section, "filter");
+        return Joiner.on('/').join("global", "admin", section, "filter");
     }
 
     @RequestMapping(value = "/{section}/table", method = RequestMethod.GET)
     public String tables(@PathVariable String section) {
-        return Joiner.on('/').join("admin", section, "table");
+        return Joiner.on('/').join("global", "admin", section, "table");
     }
 }

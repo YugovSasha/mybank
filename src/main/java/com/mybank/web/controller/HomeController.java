@@ -10,6 +10,6 @@ public class HomeController {
 
     @RequestMapping(value = "/layout", method = RequestMethod.GET)
     public String layout() {
-        return "home/layout";
+        return "global/home/layout";
     }
 }
