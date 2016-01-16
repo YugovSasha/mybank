@@ -1,4 +1,4 @@
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%--<%@ page contentType="text/html;charset=UTF-8" language="java" %>--%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jstl/core" %>
 
 <!DOCTYPE html>
@@ -10,12 +10,14 @@
   <link href="<c:url value="/css/external/bootstrap-theme.css"/>" rel="stylesheet" type="text/css">
   <link href="<c:url value="/css/external/angular-busy.css"/>" rel="stylesheet" type="text/css">
   <link href="<c:url value="/css/external/angular-growl.css"/>" rel="stylesheet" type="text/css">
-  <meta charset="utf-8">
+  <link href="<c:url value="/css/external/angular-ui-grid.css"/>" rel="stylesheet" type="text/css">
+  <%--<meta charset="utf-8">--%>
 </head>
 <body>
 
 <script src="<c:url value="/js/external/angular/angular.js"/>"></script>
 <script src="<c:url value="/js/external/angular/angular-ui-router.js"/>"></script>
+<script src="<c:url value="/js/external/angular/angular-ui-grid.js"/>"></script>
 <script src="<c:url value="/js/external/angular/angular-mask.js"/>"></script>
 <script src="<c:url value="/js/external/angular/angular-busy.js"/>"></script>
 <script src="<c:url value="/js/external/angular/angular-growl.js"/>"></script>
@@ -32,6 +34,8 @@
 <script src="<c:url value="/js/internal/controller/login.controller.js"/>"></script>
 <script src="<c:url value="/js/internal/controller/admin/admin-users.controller.js"/>"></script>
 <script src="<c:url value="/js/internal/controller/admin/admin-credits.controller.js"/>"></script>
+
+<script src="<c:url value="/js/internal/service/admin-filter.service.js"/>"></script>
 
 <div ui-view class="main-view"></div>
 <div growl class="notifications"></div>

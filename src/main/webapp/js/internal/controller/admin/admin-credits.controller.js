@@ -8,15 +8,22 @@
         $stateProvider
             .state('admin.credits', {
                 url: '/credits',
-                controller: 'AdminCreditsController',
-                controllerAs: 'adminCredits',
                 views: {
-                    filter: {
-                        templateUrl: '/admin/credits/filter'
+                    "filter": {
+                        templateUrl: '/admin/credits/filter',
+                        controller: function(AdminFilter) {
+                            this.filter = AdminFilter.provide();
+                        },
+                        controllerAs: 'vm'
                     },
-                    table: {
-                        templateUrl: '/admin/credits/table'
+                    "main": {
+                        templateUrl: '/admin/credits/table',
+                        controller: 'AdminCreditsController',
+                        controllerAs: 'adminCredits'
                     }
+                },
+                onExit: function(AdminFilter) {
+                    AdminFilter.clear();
                 }
             })
     }
