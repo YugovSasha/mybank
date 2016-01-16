@@ -9,3 +9,7 @@ body .navbar-header-right {
 .editProfile {
     float: right;
 }
+
+.admin-grid {
+    margin-right: 2%;
+}

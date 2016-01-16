@@ -6,12 +6,8 @@
         </ul>
     </div>
 
-    <div class="col-md-2">
-        <div ui-view="filter"></div>
-    </div>
-
-    <div class="col-md-8">
-        <div ui-view="main"></div>
+    <div class="col-md-10">
+        <div ui-view></div>
     </div>
 </div>
 

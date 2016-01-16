@@ -27,14 +27,9 @@ public class AdminController {
         return "global/admin/layout";
     }
 
-    @RequestMapping(value = "/{section}/filter", method = RequestMethod.GET)
+    @RequestMapping(value = "/{section}", method = RequestMethod.GET)
     public String filters(@PathVariable String section) {
-        return Joiner.on('/').join("global", "admin", section, "filter");
-    }
-
-    @RequestMapping(value = "/{section}/table", method = RequestMethod.GET)
-    public String tables(@PathVariable String section) {
-        return Joiner.on('/').join("global", "admin", section, "table");
+        return Joiner.on('/').join("global", "admin", section);
     }
 
     @ResponseBody

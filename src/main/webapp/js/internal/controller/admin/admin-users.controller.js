@@ -8,42 +8,41 @@
         $stateProvider
             .state('admin.users', {
                 url: '/users',
-                views: {
-                    "filter": {
-                        templateUrl: '/admin/users/filter',
-                        controller: function(AdminFilter) {
-                            this.filter = AdminFilter.provide();
-                        },
-                        controllerAs: 'vm'
-                    },
-                    "main": {
-                        templateUrl: '/admin/users/table',
-                        controller: 'AdminUsersController',
-                        controllerAs: 'adminUsers'
-                    }
-                },
-                onExit: function(AdminFilter) {
-                    AdminFilter.clear();
-                }
+                templateUrl: '/admin/users',
+                controller: 'AdminUsersController',
+                controllerAs: 'adminUsers'
             });
     }
 
-    function AdminUsersController($http, AdminFilter) {
+    function AdminUsersController($http) {
         var vm = this;
 
         vm.users = [];
 
-        vm.columnNames = ['id', 'firstName', 'lastName'];
+        var columns = [
+            { field: 'id', displayName: 'Id' },
+            { field: 'user.email', displayName: 'Email' },
+            { field: 'firstName', displayName: 'First name' },
+            { field: 'lastName', displayName: 'Last name' },
+            { field: 'patronymic', displayName: 'Patronymic' },
+            { field: 'user.expired', displayName: 'Expired'}
+        ];
+
         vm.gridOptions = {
-            columnDefs: _.map(vm.columnNames, function (columnName) {
-                return {field: columnName};
-            }),
-            data: vm.users
+            columnDefs: columns,
+            data: vm.users,
+            enableRowSelection: true,
+            enableRowHeaderSelection: false,
+            enableFullRowSelection: true,
+            multiSelect: false,
+            onRegisterApi: function(gridApi) {
+                vm.gridApi = gridApi;
+            }
         };
 
         function initData() {
             $http.get('admin/users/all').then(function (responce) {
-                vm.users = responce.data;
+                _.extend(vm.users, responce.data);
             })
         }
 
