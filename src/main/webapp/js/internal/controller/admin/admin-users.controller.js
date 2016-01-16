@@ -14,7 +14,7 @@
             });
     }
 
-    function AdminUsersController($http, $uibModal) {
+    function AdminUsersController($rootScope, $http, $uibModal) {
         var vm = this;
 
         vm.users = [];
@@ -43,7 +43,7 @@
         };
 
         function initData() {
-            $http.get('admin/users/all').then(function (responce) {
+            $http.get('admin/user/all').then(function (responce) {
                 _.extend(vm.users, responce.data);
             })
         }
@@ -56,9 +56,11 @@
 
         vm.editSelected = function() {
             $uibModal.open({
-
-            }).result.then(function (user) {
-                    console.log(_.last(vm.gridApi.selection.getSelectedRows()));
+                size: 'lg',
+                scope: _.extend($rootScope.$new(), {userProfile: _.last(vm.gridApi.selection.getSelectedRows())}),
+                templateUrl: '/admin/user/edit/layout'
+            }).result.then(function (userProfile) {
+                    return $http.post('/admin/user/edit', userProfile);
                 }).then(initData);
         }
     }

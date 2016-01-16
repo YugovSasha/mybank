@@ -6,5 +6,7 @@ import java.util.List;
 
 public interface UserProfileService {
 
-    List<UserProfile> getAllUserProfiles();
+    UserProfile save(UserProfile userProfile);
+
+    List<UserProfile> getAll();
 }

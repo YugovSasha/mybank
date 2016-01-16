@@ -35,8 +35,6 @@
 <script src="<c:url value="/js/internal/controller/admin/admin-users.controller.js"/>"></script>
 <script src="<c:url value="/js/internal/controller/admin/admin-credits.controller.js"/>"></script>
 
-<script src="<c:url value="/js/internal/service/admin-filter.service.js"/>"></script>
-
 <div ui-view class="main-view"></div>
 <div growl class="notifications"></div>
 

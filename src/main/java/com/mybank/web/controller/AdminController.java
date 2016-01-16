@@ -7,10 +7,7 @@ import com.mybank.service.user.UserProfileService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.annotation.Secured;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -32,9 +29,20 @@ public class AdminController {
         return Joiner.on('/').join("global", "admin", section);
     }
 
+    @RequestMapping(value = "/{entity}/edit/layout", method = RequestMethod.GET)
+    public String edit(@PathVariable String entity) {
+        return Joiner.on('/').join("global", "admin", "dialog", "edit-" + entity);
+    }
+
     @ResponseBody
-    @RequestMapping(value = "/users/all", method = RequestMethod.GET)
+    @RequestMapping(value = "/user/all", method = RequestMethod.GET)
     public List<UserProfile> viewAllUsers() {
-        return userProfileService.getAllUserProfiles();
+        return userProfileService.getAll();
+    }
+
+    @ResponseBody
+    @RequestMapping(value = "/user/edit", method = RequestMethod.POST)
+    public void editUser(@RequestBody UserProfile userProfile) {
+        userProfileService.save(userProfile);
     }
 }

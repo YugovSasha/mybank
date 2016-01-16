@@ -1,5 +1,8 @@
 package com.mybank.data.model.user;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.google.common.collect.Sets;
 import com.mybank.data.model.common.AbstractExpiringEntity;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -10,10 +13,7 @@ import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
 import javax.persistence.*;
-import java.util.Collection;
-import java.util.Collections;
-import java.util.HashSet;
-import java.util.Set;
+import java.util.*;
 import java.util.stream.Collectors;
 
 @Entity
@@ -35,9 +35,20 @@ public class User extends AbstractExpiringEntity implements UserDetails {
     @Column(nullable = false)
     private boolean enabled = true;
 
+    @ManyToMany(targetEntity = GroupAuthority.class, fetch = FetchType.EAGER)
+    @JoinTable(
+            joinColumns = @JoinColumn(name = "user_id", referencedColumnName = "id"),
+            inverseJoinColumns = @JoinColumn(name = "authority_id", referencedColumnName = "id")
+    )
+    private Set<GroupAuthority> groupAuthorities = Sets.newHashSet();
+
+    @JsonIgnore
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
-        return Collections.singleton(new SimpleGrantedAuthority("ROLE_ADMIN"));
+        return getGroupAuthorities().stream()
+                .map(GroupAuthority::getName)
+                .map(SimpleGrantedAuthority::new)
+                .collect(Collectors.toSet());
     }
 
     @Override
