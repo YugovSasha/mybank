@@ -56,8 +56,7 @@
             Modal.open({
                 size: 'lg',
                 scope: _.extend($rootScope.$new(), {
-                    credit: _.last(vm.gridApi.selection.getSelectedRows()),
-                    creditTypes: [{id: 1}, {id: 2}, {id: 3}]
+                    credit: _.last(vm.gridApi.selection.getSelectedRows())
                 }),
                 templateUrl: '/admin/credit/edit/layout'
             }).result.then(function (credit) {

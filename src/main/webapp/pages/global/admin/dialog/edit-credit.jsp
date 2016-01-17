@@ -1,8 +1,8 @@
 <div class="modal-header">Edit credit</div>
 
 <div class="modal-body">
-  <select class="selectpicker">
-    <option>alala</option>
+  <select class="selectpicker" ng-model="credit.creditType"
+          ng-options="creditType.name for creditType in creditTypes track by creditType.id">
   </select>
 </div>
 
