@@ -3,6 +3,7 @@
         <ul class="nav nav-pills nav-stacked">
             <li ui-sref-active="active"><a ui-sref="admin.users">Users</a></li>
             <li ui-sref-active="active"><a ui-sref="admin.credits">Credits</a></li>
+            <li ui-sref-active="active"><a ui-sref="admin.requests">Requests</a></li>
         </ul>
     </div>
 

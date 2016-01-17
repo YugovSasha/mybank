@@ -4,14 +4,13 @@
 <!DOCTYPE html>
 <html ng-app="mybank">
 <head>
-  <title>Yourbank</title>
+  <title>Mybank</title>
   <link href="<c:url value="/css/internal/style.css"/>" rel="stylesheet" type="text/css">
   <link href="<c:url value="/css/external/bootstrap.css"/>" rel="stylesheet" type="text/css">
   <link href="<c:url value="/css/external/bootstrap-theme.css"/>" rel="stylesheet" type="text/css">
   <link href="<c:url value="/css/external/angular-busy.css"/>" rel="stylesheet" type="text/css">
   <link href="<c:url value="/css/external/angular-growl.css"/>" rel="stylesheet" type="text/css">
   <link href="<c:url value="/css/external/ui-grid.css"/>" rel="stylesheet" type="text/css">
-  <link href="<c:url value="/css/external/select.css"/>" rel="stylesheet" type="text/css">
   <meta charset="utf-8">
 </head>
 <body>
@@ -20,7 +19,6 @@
 <script src="<c:url value="/js/external/angular/angular-sanitize.js"/>"></script>
 <script src="<c:url value="/js/external/angular/angular-ui-router.js"/>"></script>
 <script src="<c:url value="/js/external/angular/ui-grid.js"/>"></script>
-<script src="<c:url value="/js/external/angular/select.js"/>"></script>
 <script src="<c:url value="/js/external/angular/angular-mask.js"/>"></script>
 <script src="<c:url value="/js/external/angular/angular-busy.js"/>"></script>
 <script src="<c:url value="/js/external/angular/angular-growl.js"/>"></script>
@@ -37,6 +35,7 @@
 <script src="<c:url value="/js/internal/controller/login.controller.js"/>"></script>
 <script src="<c:url value="/js/internal/controller/admin/admin-users.controller.js"/>"></script>
 <script src="<c:url value="/js/internal/controller/admin/admin-credits.controller.js"/>"></script>
+<script src="<c:url value="/js/internal/controller/admin/admin-requests.controller.js"/>"></script>
 
 <div ui-view class="main-view"></div>
 <div growl class="notifications"></div>
