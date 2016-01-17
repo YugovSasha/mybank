@@ -2,6 +2,7 @@
 
     angular
         .module('mybank', [
+            'ngSanitize',
             'ui.router',
             'ui.bootstrap',
             'ui.mask',
