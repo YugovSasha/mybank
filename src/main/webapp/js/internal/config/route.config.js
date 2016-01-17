@@ -4,7 +4,8 @@
     angular
         .module('mybank')
         .config(routeDefaultPathConfig)
-        .run(routeErrorConfig);
+        .run(routeErrorConfig)
+        .run(bootstrapSelectConfig);
 
     /** @ngInject */
     function routeDefaultPathConfig($urlRouterProvider) {
@@ -18,6 +19,15 @@
         $rootScope.$on('$stateChangeError', function (event) {
             event.preventDefault();
             $state.go('home');
+        });
+    }
+
+    function bootstrapSelectConfig($rootScope) {
+        $rootScope.$on('$viewContentLoaded', function () {
+            $('.selectpicker').selectpicker();
+        });
+        $rootScope.$on('modal.open', function () {
+            $('.selectpicker').selectpicker();
         });
     }
 

@@ -11,6 +11,7 @@
   <link href="<c:url value="/css/external/angular-busy.css"/>" rel="stylesheet" type="text/css">
   <link href="<c:url value="/css/external/angular-growl.css"/>" rel="stylesheet" type="text/css">
   <link href="<c:url value="/css/external/ui-grid.css"/>" rel="stylesheet" type="text/css">
+  <link href="<c:url value="/css/external/bootstrap-select.css"/>" rel="stylesheet" type="text/css">
   <meta charset="utf-8">
 </head>
 <body>
@@ -22,7 +23,8 @@
 <script src="<c:url value="/js/external/angular/angular-mask.js"/>"></script>
 <script src="<c:url value="/js/external/angular/angular-busy.js"/>"></script>
 <script src="<c:url value="/js/external/angular/angular-growl.js"/>"></script>
-<script src="<c:url value="/js/external/jquery/jquery-1.11.3.min.js"/>"></script>
+<script src="<c:url value="/js/external/jquery/jquery-1.12.0.js"/>"></script>
+<script src="<c:url value="/js/external/bootstrap/bootstrap-select.js"/>"></script>
 <script src="<c:url value="/js/external/bootstrap/bootstrap.min.js"/>"></script>
 <script src="<c:url value="/js/external/bootstrap/ui-bootstrap-tpls-0.14.3.js"/>"></script>
 <script src="<c:url value="/js/external/lodash/lodash.js"/>"></script>
@@ -36,6 +38,8 @@
 <script src="<c:url value="/js/internal/controller/admin/admin-users.controller.js"/>"></script>
 <script src="<c:url value="/js/internal/controller/admin/admin-credits.controller.js"/>"></script>
 <script src="<c:url value="/js/internal/controller/admin/admin-requests.controller.js"/>"></script>
+
+<script src="<c:url value="/js/internal/service/modal.service.js"/>"></script>
 
 <div ui-view class="main-view"></div>
 <div growl class="notifications"></div>

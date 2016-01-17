@@ -15,7 +15,7 @@
     }
 
 
-    function AdminCreditsController($rootScope, $http, $uibModal) {
+    function AdminCreditsController($rootScope, $http, Modal) {
         var vm = this;
 
         vm.credits = [];
@@ -53,7 +53,7 @@
         };
 
         vm.editSelected = function() {
-            $uibModal.open({
+            Modal.open({
                 size: 'lg',
                 scope: _.extend($rootScope.$new(), {
                     credit: _.last(vm.gridApi.selection.getSelectedRows()),

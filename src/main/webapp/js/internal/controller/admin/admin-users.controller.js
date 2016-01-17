@@ -14,7 +14,7 @@
             });
     }
 
-    function AdminUsersController($rootScope, $http, $uibModal) {
+    function AdminUsersController($rootScope, $http, Modal) {
         var vm = this;
 
         vm.users = [];
@@ -55,7 +55,7 @@
         };
 
         vm.editSelected = function() {
-            $uibModal.open({
+            Modal.open({
                 size: 'lg',
                 scope: _.extend($rootScope.$new(), {userProfile: _.last(vm.gridApi.selection.getSelectedRows())}),
                 templateUrl: '/admin/user/edit/layout'
