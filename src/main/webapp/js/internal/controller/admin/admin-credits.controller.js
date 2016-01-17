@@ -55,9 +55,7 @@
         vm.editSelected = function() {
             Modal.open({
                 size: 'lg',
-                scope: _.extend($rootScope.$new(), {
-                    credit: _.last(vm.gridApi.selection.getSelectedRows())
-                }),
+                scope: _.extend($rootScope.$new(), {credit: _.cloneDeep(_.last(vm.gridApi.selection.getSelectedRows()))}),
                 templateUrl: '/admin/credit/edit/layout'
             }).result.then(function (credit) {
                     return $http.post('/admin/credit/edit', credit);
