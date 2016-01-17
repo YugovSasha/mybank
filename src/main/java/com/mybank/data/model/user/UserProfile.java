@@ -1,9 +1,13 @@
 package com.mybank.data.model.user;
 
+import com.mybank.data.model.credit.Credit;
 import com.mybank.data.model.common.AbstractExpiringEntity;
-import lombok.*;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 import javax.persistence.*;
+import java.util.List;
 
 /**
  * @author admin.
@@ -28,4 +32,7 @@ public class UserProfile extends AbstractExpiringEntity {
             cascade = {CascadeType.PERSIST, CascadeType.REMOVE, CascadeType.MERGE}, targetEntity = User.class)
     @JoinColumn(name = "user_id", nullable = false)
     private User user;
+
+    @OneToMany(fetch = FetchType.EAGER, mappedBy = "userProfile")
+    private List<Credit> credits;
 }

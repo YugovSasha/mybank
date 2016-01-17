@@ -1,17 +1,20 @@
 package com.mybank.data.model.common;
 
+import com.fasterxml.jackson.annotation.JsonIdentityInfo;
+import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 import com.mybank.data.Identifiable;
-import lombok.Getter;
 import lombok.NoArgsConstructor;
-import lombok.Setter;
 
-import javax.persistence.*;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.MappedSuperclass;
 import java.io.Serializable;
-import java.util.Date;
 
 /**
  * Created by admin on 11/2/2015.
  */
+@JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "id")
 @MappedSuperclass
 @NoArgsConstructor
 public abstract class AbstractEntity implements Serializable, Identifiable {
