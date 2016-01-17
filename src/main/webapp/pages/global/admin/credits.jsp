@@ -7,7 +7,7 @@
     <br/>
     <div class="row">
         <div class="col-md-2">
-            <button class="btn btn-success form-control" ng-disabled="!adminCredits.personSelected()" ng-click="adminCredits.editSelected()">Edit</button>
+            <button class="btn btn-success form-control" ng-disabled="!adminCredits.creditSelected()" ng-click="adminCredits.editSelected()">Edit</button>
         </div>
     </div>
 </div>

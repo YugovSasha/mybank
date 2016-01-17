@@ -15,14 +15,15 @@
     }
 
 
-    function AdminCreditsController($http) {
+    function AdminCreditsController($rootScope, $http, $uibModal) {
         var vm = this;
 
         vm.credits = [];
 
         var columns = [
             { field: 'id', displayName: 'Id' },
-            { field: 'userProfile.id', displayName: 'User id' }
+            { field: 'userProfile.id', displayName: 'User id' },
+            { field: 'creditType.name', displayName: 'Credit type' }
         ];
 
         vm.gridOptions = {
@@ -46,6 +47,23 @@
         }
 
         initData();
+
+        vm.creditSelected = function() {
+            return vm.gridApi ? vm.gridApi.selection.getSelectedRows().length : false;
+        };
+
+        vm.editSelected = function() {
+            $uibModal.open({
+                size: 'lg',
+                scope: _.extend($rootScope.$new(), {
+                    credit: _.last(vm.gridApi.selection.getSelectedRows()),
+                    creditTypes: [{id: 1}, {id: 2}, {id: 3}]
+                }),
+                templateUrl: '/admin/credit/edit/layout'
+            }).result.then(function (credit) {
+                    return $http.post('/admin/credit/edit', credit);
+                }).then(initData);
+        }
     }
 })();
 

@@ -14,7 +14,7 @@ import java.io.Serializable;
 /**
  * Created by admin on 11/2/2015.
  */
-@JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "id")
+@JsonIdentityInfo(generator = ObjectIdGenerators.UUIDGenerator.class)
 @MappedSuperclass
 @NoArgsConstructor
 public abstract class AbstractEntity implements Serializable, Identifiable {
@@ -26,5 +26,9 @@ public abstract class AbstractEntity implements Serializable, Identifiable {
     @Override
     public Long getId() {
         return id;
+    }
+
+    public void resetId() {
+        id = null;
     }
 }

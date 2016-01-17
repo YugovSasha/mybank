@@ -6,4 +6,6 @@ package com.mybank.data;
 public interface Identifiable {
 
     Long getId();
+
+    void resetId();
 }

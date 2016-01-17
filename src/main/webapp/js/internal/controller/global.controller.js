@@ -14,8 +14,12 @@
             })
     }
 
-    function GlobalController() {
+    function GlobalController($http, $rootScope) {
         var vm = this;
+
+        $http.get('vocabulary/credit-types/all').then(function (responce) {
+            $rootScope.creditTypes = responce.data;
+        })
     }
 })();
 

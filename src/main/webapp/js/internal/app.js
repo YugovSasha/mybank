@@ -7,6 +7,7 @@
             'ui.mask',
             'ui.grid',
             'ui.grid.selection',
+            'ui.select',
             'cgBusy',
             'angular-growl'
         ]);

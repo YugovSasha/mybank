@@ -9,7 +9,7 @@ import java.util.List;
  */
 public interface CreditService {
 
-    Credit save(Credit userProfile);
+    Credit save(Credit credit);
 
     List<Credit> getAll();
 }

@@ -18,4 +18,8 @@ public abstract class AbstractExpiringEntity extends AbstractEntity {
 
     @Column(nullable = false)
     private boolean expired;
+
+    public void expire() {
+        expired = true;
+    }
 }

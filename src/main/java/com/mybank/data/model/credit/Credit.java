@@ -23,4 +23,8 @@ public class Credit extends AbstractExpiringEntity {
     @ManyToOne(fetch = FetchType.EAGER, targetEntity = UserProfile.class)
     @JoinColumn(name = "user_profile_id", nullable = false)
     private UserProfile userProfile;
+
+    @ManyToOne
+    @JoinColumn(name = "credit_type_id", nullable = false)
+    private CreditType creditType;
 }
