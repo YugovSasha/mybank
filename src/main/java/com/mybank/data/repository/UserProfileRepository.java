@@ -10,4 +10,6 @@ import com.mybank.data.model.user.UserProfile;
 public interface UserProfileRepository extends EntityRepository<UserProfile> {
 
     UserProfile findByUser(User user);
+
+    UserProfile findByUserEmail(String email);
 }

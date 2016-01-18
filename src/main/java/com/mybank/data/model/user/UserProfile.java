@@ -1,5 +1,6 @@
 package com.mybank.data.model.user;
 
+import com.google.common.collect.Lists;
 import com.mybank.data.model.credit.Credit;
 import com.mybank.data.model.common.AbstractExpiringEntity;
 import com.mybank.data.model.credit.Request;
@@ -35,9 +36,9 @@ public class UserProfile extends AbstractExpiringEntity {
     private User user;
 
     @OneToMany(fetch = FetchType.EAGER, mappedBy = "userProfile")
-    private List<Credit> credits;
+    private List<Credit> credits = Lists.newArrayList();
 
     @OneToMany(fetch = FetchType.EAGER, targetEntity = Request.class)
     @JoinColumn(name = "user_profile_id")
-    private List<Request> requests;
+    private List<Request> requests = Lists.newArrayList();
 }
