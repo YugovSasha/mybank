@@ -22,7 +22,7 @@
         });
     }
 
-    function bootstrapSelectConfig($rootScope) {
+    function bootstrapSelectConfig($rootScope, $timeout) {
         $rootScope.$on('$viewContentLoaded', function () {
             $('.selectpicker').selectpicker();
         });
@@ -30,7 +30,9 @@
             $('.selectpicker').selectpicker();
         });
         $rootScope.$on('optional.loaded', function () {
-            $('.selectpicker').selectpicker();
+            $timeout(function () {
+                $('.selectpicker').selectpicker('refresh');
+            });
         });
     }
 

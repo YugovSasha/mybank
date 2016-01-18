@@ -8,13 +8,11 @@
             restrict: 'EA',
             templateUrl: '/component/optional/layout',
             scope: {
+                model: '=',
                 url: '=',
                 property: '='
             },
-            require: 'ngModel',
-            link: function(scope, element, attrs, ngModel) {
-                scope.ngModel = ngModel;
-
+            link: function(scope) {
                 scope.entities = [];
                 $http.get(scope.url).then(function (responce) {
                     scope.entities = responce.data;

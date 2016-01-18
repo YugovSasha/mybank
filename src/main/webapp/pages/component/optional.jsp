@@ -1,3 +1,3 @@
-<select class="selectpicker" ng-model="ngModel"
-        ng-options="entity.name for entity in entities track by entity.id">
+<select class="selectpicker" ng-model="model"
+        ng-options="entity.{{property}} for entity in entities track by entity.id">
 </select>
