@@ -8,11 +8,11 @@ import org.springframework.web.bind.annotation.RequestMethod;
  * @author Yugov Alexandr.
  */
 @Controller
-@RequestMapping("optional")
-public class OptionalController {
+@RequestMapping("component")
+public class ComponentController {
 
-    @RequestMapping(value = "/layout" , method = RequestMethod.GET)
-    public String indexLayout() {
-        return "index";
+    @RequestMapping(value = "/optional/layout" , method = RequestMethod.GET)
+    public String optionalLayout() {
+        return "component/optional";
     }
 }

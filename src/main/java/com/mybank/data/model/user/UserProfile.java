@@ -2,6 +2,7 @@ package com.mybank.data.model.user;
 
 import com.mybank.data.model.credit.Credit;
 import com.mybank.data.model.common.AbstractExpiringEntity;
+import com.mybank.data.model.credit.Request;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -35,4 +36,8 @@ public class UserProfile extends AbstractExpiringEntity {
 
     @OneToMany(fetch = FetchType.EAGER, mappedBy = "userProfile")
     private List<Credit> credits;
+
+    @OneToMany(fetch = FetchType.EAGER, targetEntity = Request.class)
+    @JoinColumn(name = "user_profile_id")
+    private List<Request> requests;
 }

@@ -39,6 +39,8 @@
 <script src="<c:url value="/js/internal/controller/admin/admin-credits.controller.js"/>"></script>
 <script src="<c:url value="/js/internal/controller/admin/admin-requests.controller.js"/>"></script>
 
+<script src="<c:url value="/js/internal/directive/optional.directive.js"/>"></script>
+
 <script src="<c:url value="/js/internal/service/modal.service.js"/>"></script>
 
 <div ui-view class="main-view"></div>

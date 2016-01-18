@@ -29,6 +29,9 @@
         $rootScope.$on('modal.open', function () {
             $('.selectpicker').selectpicker();
         });
+        $rootScope.$on('optional.loaded', function () {
+            $('.selectpicker').selectpicker();
+        });
     }
 
 })();
